@@ -7,16 +7,25 @@ import Arraycounter from './coponents/Arraycounter.jsx';
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx'
+import About from './pages/About.jsx'
+import Nav from "./coponents/Nav.jsx"
+import Users from './pages/Users.jsx';
 function App() {
     return (
         <div>
             <Router>
+                <Nav />
                 <Routes>
-                    <Route path="/" element={<Home />}></Route>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/users/:username" element={<Users />} />
                 </Routes>
             </Router>
         </div>
-    )
+    );
+}
+
+export default App;
 
 
 
@@ -45,6 +54,3 @@ function App() {
   {showModal ? <Modal title="Are you Sure you want to Delete?"/>: null}
   </div>
  );*/
-}
-
-export default App;
